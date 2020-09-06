@@ -3,18 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>SuperHero</title>
   <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
       integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <link rel="stylesheet" href="main.css">
   <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=css-tricks.com">
-  <link rel="icon" href="">
+  
   <script src="script.js" async></script>
 </head>
 <body>
-  <i class="fas fa-check"></i>
+  <div class="container">
+    <!-- <h1 class="display-4"> Search for superheroes</h1>
+    <br> -->
+    <div class="search_bar">
+      <!-- Search Bar -->
+      <div class="input-group md-form form-sm form-2 pl-0" >
+        <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" id="hero-name">
+        <div class="input-group-append">
+          <span class="input-group-text amber lighten-3" id="btn-search"><i class="fas fa-search text-grey"
+              aria-hidden="true"></i></span>
+        </div>
+        <button class="btn btn-outline-danger" id="btn-favourite"><i class="fa fa-heart"></i> My Favourites</button>
+      </div>
+      <!-- <input type="text"  placeholder="Enter name of your hero" id="hero-name" > -->
+      <!-- <input class="form-control" type="text" placeholder="Enter name of your hero" aria-label="Search" id="hero-name"> -->
+      <!-- <button class="btn btn-primary" type="button" value="Input" id="btn-search"><i class="fa fa-search"></i> Search!</button> -->
+     
+      <ul id="lists" class="list-group">
+        <!-- <li>
+          <span> Name</span>
+          <img>
+          <button> Add fav</button>
+        </li> -->
+      </ul>
+
+  </div>
+  </div>
 </body>
 </html>
