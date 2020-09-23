@@ -9,6 +9,7 @@ const saveBtn=document.querySelector('.search-button')
 const searchInput=document.querySelector('.search-input')
 const card=document.querySelector('.card-list')
 const seemoreBtn=document.querySelector('.seeMore')
+const btn=document.querySelector('.button1')
 
 saveBtn.addEventListener('click',searchAdd)
 card.addEventListener('click',cardClicked)
@@ -69,7 +70,14 @@ function insertData(){
   const anchortag1=document.createElement('a')
   anchortag1.setAttribute('href','#')
   anchortag1.setAttribute('title','Real Name')
-  const text1=document.createTextNode(bio[0])
+  let text1
+  if(bio[0]){
+     text1=document.createTextNode(bio[0])
+  }
+  else{
+    text1=document.createTextNode('N/A')
+  }
+  
   anchortag1.appendChild(text1)
   const anchortag2=document.createElement('a')
   anchortag2.setAttribute('href','#')
@@ -100,9 +108,20 @@ function insertData(){
   seemoreBtn.textContent='See More'
   seemoreBtn.setAttribute('title','See More')
   seemoreBtn.setAttribute('id',id)
-  card.appendChild(seemoreBtn)
+  btn.appendChild(seemoreBtn)
+  card.appendChild(btn)
   seemoreBtn.addEventListener('click',seeMore)
+  //add to favourites
+  const addtofavorites=document.createElement('button')
+  addtofavorites.classList.add('addtofavourite')
+  addtofavorites.textContent='Add to Favourite'
+  addtofavorites.setAttribute('title','Add to Favourite')
+  addtofavorites.setAttribute('id',id)
+  btn.appendChild(addtofavorites)
+  card.appendChild(btn)
 }
+
+
 async function searchAdd(e){
   e.preventDefault()
   let name1=searchInput.value
@@ -124,19 +143,21 @@ async function searchAdd(e){
   console.log(id)
   insertData()
 }
+
+
 function cardClicked(){
   //window.open('http://www.google.com', "_blank")
 }
 
-async function seeMore(){
+async function seeMore(e){
   const id=e.srcElement.id
   const hero=await fetch('https://superheroapi.com/api.php/349834112859931/'+id)
   const data=await hero.json()
   console.log(data)
   window.open('SuperHeroInfo.html', '_blank')
-
-  //Display all the data
+  localStorage.setItem('id',data.id)
 
 } 
+
 
 fetchData()

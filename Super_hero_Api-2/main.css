@@ -199,20 +199,24 @@ a {
   margin-right: 2rem;
   cursor: pointer;
 }
- .seeMore{
-  padding: 20px 20px;
+.button1{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+ .seeMore,.addtofavourite{
+  padding: 10px 10px;
   border-radius: 16px;
   background: #17141d;
   box-shadow: -1rem 0 3rem #000;
-  display: flex;
   color: yellowgreen;
   cursor: pointer;
   outline:none;
-  /* margin-left: 150px;
-  margin-top: -20px; */
-  justify-content: center;
-  font-size:2rem;
+  font-size:1.5rem;
 } 
+.seeMore:hover,.addtofavourite:hover {
+  background: linear-gradient(90deg,#ff8a00,#e52e71);
+}
 icon{
   color:yellowgreen;
 }
